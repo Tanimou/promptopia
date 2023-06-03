@@ -5,38 +5,20 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/javascript-node:0-20",
 	"features": {
-		"ghcr.io/devcontainers/features/git:1": {
-			"ppa": true,
-			"version": "latest"
-		},
-		"ghcr.io/devcontainers/features/github-cli:1": {
-			"installDirectlyFromGitHubRelease": true,
-			"version": "latest"
-		},
-		"ghcr.io/devcontainers/features/node:1": {
-			"nodeGypDependencies": true,
-			"version": "lts"
-		},
-		"ghcr.io/devcontainers-contrib/features/gitomatic:1": {
-			"version": "latest"
-		},
-		"ghcr.io/devcontainers-contrib/features/npm-package:1": {
-			"package": "typescript",
-			"version": "latest"
-		},
-		"ghcr.io/devcontainers-contrib/features/vercel-cli:1": {
-			"version": "latest"
-		}
+	
+		// "ghcr.io/devcontainers-contrib/features/vercel-cli:1": {
+		// 	"version": "latest"
+		// }
 	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [3000],
+	// "forwardPorts": [3000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm i && npm run dev",
+	"postCreateCommand": "npm run dev",
 
 	// Configure tool-specific properties.
 	"customizations": {
