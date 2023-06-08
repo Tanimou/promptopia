@@ -5,10 +5,10 @@ import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import { useRouter, usePathname } from 'next/navigation'
 
-const PromptCard = ({ prompt, handleTagClick, handleEdit, handleDelete }) => {
+const PromptCard = ({ prompt, handleTagClick, handleEdit, handleDelete,handlePictureClick }) => {
     const [copied, setcopied] = useState("")
     const { data: session } = useSession()
-    const router = useRouter()
+
     const pathName = usePathname()
     const handleCopy = () => {
         navigator.clipboard.writeText(prompt.prompt)
@@ -20,7 +20,8 @@ const PromptCard = ({ prompt, handleTagClick, handleEdit, handleDelete }) => {
     return (
                 <div className='prompt_card'>
                 <div className='flex justify-between items-start gap-5'>
-                    <div className='flex-1 flex justify-start gap-3 items-center cursor-pointer'>
+                    <div className='flex-1 flex justify-start gap-3 items-center cursor-pointer' onClick={()=> handlePictureClick &&
+                    handlePictureClick(prompt)}>
                         <Image src={prompt.creator.image} alt='user profile' width={40} height={40}
                             className='rounded-full object-contain' />
                         <div className='flex flex-col'>

@@ -11,9 +11,10 @@ export const POST = async (req, res) => {
             creator: userId
         })
         await newPrompt.save()
-        return new Response("Prompt created",{status:200})
+        return new Response(JSON.stringify({ message: "Prompt created" }), { status: 200 })
+
     } catch (error) {
-        return new Response(JSON.stringify({ message: error.message },{status:500}))
+        return new Response(JSON.stringify({ message: error.message }),{status:500})
     }
 
 }
