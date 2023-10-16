@@ -21,7 +21,9 @@ const UserProfile = () => {
             console.log(data)
         }
 
-        if (creatorId) getPrompt()
+        if (creatorId) {
+            getPrompt()
+        }
     }, [])
 
 
